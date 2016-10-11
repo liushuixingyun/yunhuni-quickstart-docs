@@ -1,0 +1,26 @@
+{
+  "name": "yunhuni-quickstart-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": "https://github.com/liushuixingyun/yunhuni-server-api-docs.git",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "gitbook-cli": "^2.3.0"
+  },
+  "devDependencies": {
+    "gitbook-cli": "^2.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/.bin/gitbook build",
+    "serve": "node_modules/.bin/gitbook serve"
+  },
+  "author": "",
+  "license": "ISC",
+  "engines": {
+    "gitbook": "*"
+  }
+}
