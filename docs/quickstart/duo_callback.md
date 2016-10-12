@@ -1,15 +1,18 @@
 
 # 语音回拨
-用户应用调用该接口后，云呼你平台首先向第一个被叫方发起呼叫；
-在第一方接听后，向二方放发起呼叫；第二方接听后，双方通话。
+用户应用调用该接口后， [yunhuni.com](www.yunhuni.com) 首先向第一个被叫方发起呼叫； 在第一方接听后，向二方放发起呼叫；第二方接听后，双方通话。
+
+期间任何一方挂机，就结束双向回拨过程。
+
+被叫的双方不能是同一个号码。
 
 
-##下载Demo&SDK
-[下载]
+##Demo&SDK下载
+[下载](docs/work/sdk.md)
 
 ##Demo示例
 
-###接口调用示例
+###接口调用
 {% codetabs name="Java", type="jsp" -%}
 
 msg = "Hello World"
@@ -61,17 +64,16 @@ function duoCallback($from1, $to1, $from2, $to2, $ring_tone, $ring_tone_mode, $m
 duoCallback(null, '第一方被叫号码', null, '第二方主叫号码', null, 0, 30, 3600, 0, 0, '用户数据');
 {%- endcodetabs %}
 
-##事件回调
+###事件回调
+当 yunhuni.com 上的实时通信过程的状态发生变化时， yunhuni.com 将向一个URL发送HTTP请求，并在请求中附带相关数据。 这一过程被称作事件回调。
 {% codetabs name="Java", type="jsp" -%}
 
-{%- language name="php", type="php" -%}
-    //接收流数据
-    $streamData = isset($GLOBALS['HTTP_RAW_POST_DATA']) ? $GLOBALS['HTTP_RAW_POST_DATA'] : '';
-    if (empty($streamData)) {
-        $streamData = file_get_contents('php://input');
-    }
-    file_put_contents('text.log',$streamData)
-    
-{%- endcodetabs %}
 
-[更多详情](http://yunhuni.com/)
+{%- language name="php", type="php" -%}
+//接收流数据
+$streamData = isset($GLOBALS['HTTP_RAW_POST_DATA']) ? $GLOBALS['HTTP_RAW_POST_DATA'] : '';
+if (empty($streamData)) {
+   $streamData = file_get_contents('php://input');
+}
+file_put_contents('text.log',$streamData);
+{%- endcodetabs %}
