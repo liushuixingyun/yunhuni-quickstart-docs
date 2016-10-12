@@ -8,7 +8,7 @@
 
 
 ##Demo&SDK下载
-[下载](docs/work/sdk.md)
+[下载](../work/sdk.html)
 
 ##Demo示例
 
@@ -65,7 +65,11 @@ duoCallback(null, '第一方被叫号码', null, '第二方主叫号码', null, 
 {%- endcodetabs %}
 
 ###事件回调
-当 yunhuni.com 上的实时通信过程的状态发生变化时， yunhuni.com 将向一个URL发送HTTP请求，并在请求中附带相关数据。 这一过程被称作事件回调。
+当 yunhuni.com 上的实时通信过程的状态发生变化时，yunhuni.com 将向一个URL发送HTTP请求，并在请求中附带相关数据。 这一过程被称作事件回调。
+
+回调URL
+该URL由用户自定义，来源于用户调用的应用的回调URL。可首页或者应用详情页中查看。用户在创建应用或者修改应用信息时填写/修改，填写/修改时需填写完整地址。
+
 {% codetabs name="Java", type="jsp" -%}
 
 
